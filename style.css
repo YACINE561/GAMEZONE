@@ -1,23 +1,40 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #141e30, #243b55);
-    color: white;
+    background-color: var(--bg, #141e30);
+    color: var(--fg, white);
     margin: 0;
     padding: 0;
-    text-align: center;
+    transition: background 0.5s, color 0.5s;
 }
-header {
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
     padding: 2rem;
-    background-color: #111;
 }
-footer {
-    margin-top: 2rem;
+.card {
+    background: #1e1e2f;
     padding: 1rem;
-    background-color: #000;
-}
-iframe {
-    border: none;
-    margin-top: 1rem;
     border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 10px #0006;
+}
+a {
+    color: #00f5ff;
+    text-decoration: none;
+}
+.lang-switch, .controls {
+    text-align: center;
+    margin-top: 1rem;
+}
+button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #00f5ff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
 }
