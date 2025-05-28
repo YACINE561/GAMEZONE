@@ -1,0 +1,22 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header {
+    padding: 2rem;
+    background-color: #111;
+}
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #000;
+}
+iframe {
+    border: none;
+    margin-top: 1rem;
+    border-radius: 12px;
+}
