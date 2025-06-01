@@ -1,91 +1,74 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GameZone | منطقة الألعاب</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>GameZone | 10 ألعاب تعمل مباشرة</title>
   <style>
-    body.dark-mode {
-      background-color: #121212;
-      color: white;
-    }
-    .game-button {
-      background-color: #222;
-      color: #0ff;
-      border: 1px solid #0ff;
-      margin: 1em;
-      padding: 1em;
-      border-radius: 10px;
-    }
+    body { font-family: sans-serif; margin: 0; background: #f0f0f0; }
+    header { background: #00bcd4; color: white; padding: 1em; text-align: center; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1em; padding: 1em; }
+    .game-card { background: white; border-radius: 10px; padding: 1em; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    iframe { width: 100%; height: 300px; border: none; border-radius: 8px; }
+    h3 { margin-top: 0.5em; }
   </style>
 </head>
 <body>
   <header>
-    <h1>🎮 منطقة الألعاب | Game Zone</h1>
-    <p>اختر لعبتك المفضلة وابدأ المرح!</p>
-    <button onclick="toggleNightMode()">🌗 وضع ليلي/نهاري</button>
-    <button onclick="toggleSound()">🔊 صوت / كتم</button>
-    <p>اللغة: 🇦🇪 العربية | 🇬🇧 English | 🇫🇷 Français</p>
+    <h1>🎮 GameZone | ألعاب تعمل مباشرة داخل الموقع</h1>
   </header>
+  <div class="grid">
 
-  <main>
-    <div class="game-button">
-      <h2>⚽ لعبة كرة القدم</h2>
-      <p>Football Game | Jeu de Football</p>
-      <a href="football.html" target="_blank">ابدأ اللعبة</a>
+    <div class="game-card">
+      <h3>CarRace</h3>
+      <iframe src="https://ubg77.github.io/game131022/3d-car-simulator/"></iframe>
     </div>
 
-    <div class="game-button">
-      <h2>🧱 لعبة كسر الطوب</h2>
-      <p>Brick Breaker | Casse-brique</p>
-      <a href="brick-breaker.html" target="_blank">ابدأ اللعبة</a>
+    <div class="game-card">
+      <h3>Basketball</h3>
+      <iframe src="https://ubg77.github.io/game131022/basketball-stars/"></iframe>
     </div>
 
-    <div class="game-button">
-      <h2>🕹️ لعبة القفز</h2>
-      <p>Platform Jumper | Saut Plateforme</p>
-      <a href="platform-jumper.html" target="_blank">ابدأ اللعبة</a>
+    <div class="game-card">
+      <h3>MotoX3M</h3>
+      <iframe src="https://ubg77.github.io/game131022/moto-x3m/"></iframe>
     </div>
 
-    <div class="game-button">
-      <h2>🐍 لعبة الثعبان</h2>
-      <p>Snake Game | Jeu de Serpent</p>
-      <a href="snake.html" target="_blank">ابدأ اللعبة</a>
+    <div class="game-card">
+      <h3>ZombsRoyale</h3>
+      <iframe src="https://ubg77.github.io/game131022/zombs-royale/"></iframe>
     </div>
 
-    <div class="game-button">
-      <h2>🏎️ لعبة السباق</h2>
-      <p>Racing Game | Jeu de Course</p>
-      <a href="racing.html" target="_blank">ابدأ اللعبة</a>
+    <div class="game-card">
+      <h3>Slope</h3>
+      <iframe src="https://ubg77.github.io/game131022/slope/"></iframe>
     </div>
-  </main>
 
-  <footer>
-    <p>GameZone © 2025</p>
-  </footer>
+    <div class="game-card">
+      <h3>DriftBoss</h3>
+      <iframe src="https://ubg77.github.io/game131022/drift-boss/"></iframe>
+    </div>
 
-  <audio id="click-sound" src="click.mp3"></audio>
-  <script>
-    let dark = false;
-    let soundOn = true;
+    <div class="game-card">
+      <h3>TempleRun</h3>
+      <iframe src="https://ubg77.github.io/game131022/temple-run-2/"></iframe>
+    </div>
 
-    function toggleNightMode() {
-      dark = !dark;
-      document.body.classList.toggle("dark-mode", dark);
-    }
+    <div class="game-card">
+      <h3>StickMerge</h3>
+      <iframe src="https://ubg77.github.io/game131022/stick-merge/"></iframe>
+    </div>
 
-    function toggleSound() {
-      soundOn = !soundOn;
-      alert(soundOn ? "🔊 الصوت مفعّل" : "🔇 الصوت موقوف");
-    }
+    <div class="game-card">
+      <h3>Bitlife</h3>
+      <iframe src="https://ubg77.github.io/game131022/bitlife/"></iframe>
+    </div>
 
-    document.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        if (soundOn) document.getElementById("click-sound").play();
-      });
-    });
-  </script>
+    <div class="game-card">
+      <h3>SubwaySurf</h3>
+      <iframe src="https://ubg77.github.io/game131022/subway-surfers/"></iframe>
+    </div>
+
+  </div>
 </body>
 </html>
