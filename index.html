@@ -2,45 +2,90 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>منطقة الألعاب | Game Zone</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameZone | منطقة الألعاب</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body.dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+    .game-button {
+      background-color: #222;
+      color: #0ff;
+      border: 1px solid #0ff;
+      margin: 1em;
+      padding: 1em;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
-    <header><h1>🎮 منطقة الألعاب | Game Zone</h1></header>
+  <header>
+    <h1>🎮 منطقة الألعاب | Game Zone</h1>
+    <p>اختر لعبتك المفضلة وابدأ المرح!</p>
+    <button onclick="toggleNightMode()">🌗 وضع ليلي/نهاري</button>
+    <button onclick="toggleSound()">🔊 صوت / كتم</button>
+    <p>اللغة: 🇦🇪 العربية | 🇬🇧 English | 🇫🇷 Français</p>
+  </header>
 
-    <div class="controls">
-        <button onclick="toggleDarkMode()">🌓 وضع ليلي/نهاري</button>
-        <button onclick="toggleSound()">🔊 صوت / كتم</button>
+  <main>
+    <div class="game-button">
+      <h2>⚽ لعبة كرة القدم</h2>
+      <p>Football Game | Jeu de Football</p>
+      <a href="football.html" target="_blank">ابدأ اللعبة</a>
     </div>
 
-    <div class="lang-switch">
-        <p>اللغة: 🇦🇪 العربية | 🇬🇧 English | 🇫🇷 Français</p>
+    <div class="game-button">
+      <h2>🧱 لعبة كسر الطوب</h2>
+      <p>Brick Breaker | Casse-brique</p>
+      <a href="brick-breaker.html" target="_blank">ابدأ اللعبة</a>
     </div>
 
-    <main class="container">
-        <div class="card"><a href="games/football.html">⚽ لعبة كرة القدم<br>Football Game<br>Jeu de Football</a></div>
-        <div class="card"><a href="games/brick-breaker.html">🧱 لعبة كسر الطوب<br>Brick Breaker<br>Casse-brique</a></div>
-        <div class="card"><a href="games/platform-jumper.html">🕹️ لعبة القفز<br>Platform Jumper<br>Saut Plateforme</a></div>
-        <div class="card"><a href="games/snake.html">🐍 لعبة الثعبان<br>Snake Game<br>Jeu de Serpent</a></div>
-        <div class="card"><a href="games/racing.html">🚗 لعبة سباق سيارات<br>Racing Game<br>Course de Voitures</a></div>
-    </main>
+    <div class="game-button">
+      <h2>🕹️ لعبة القفز</h2>
+      <p>Platform Jumper | Saut Plateforme</p>
+      <a href="platform-jumper.html" target="_blank">ابدأ اللعبة</a>
+    </div>
 
-    <footer style="text-align:center; padding:1rem;">
-        <p>GameZone © 2025</p>
-    </footer>
+    <div class="game-button">
+      <h2>🐍 لعبة الثعبان</h2>
+      <p>Snake Game | Jeu de Serpent</p>
+      <a href="snake.html" target="_blank">ابدأ اللعبة</a>
+    </div>
 
-    <script>
-        function toggleDarkMode() {
-            const dark = document.body.style.getPropertyValue('--bg') === '#141e30';
-            document.body.style.setProperty('--bg', dark ? '#fff' : '#141e30');
-            document.body.style.setProperty('--fg', dark ? '#000' : 'white');
-        }
+    <div class="game-button">
+      <h2>🏎️ لعبة السباق</h2>
+      <p>Racing Game | Jeu de Course</p>
+      <a href="racing.html" target="_blank">ابدأ اللعبة</a>
+    </div>
+  </main>
 
-        function toggleSound() {
-            alert("🎵 تم تفعيل/إيقاف الصوت (تمثيلي) - الصوت الحقيقي سيتم دمجه لاحقًا.");
-        }
-    </script>
+  <footer>
+    <p>GameZone © 2025</p>
+  </footer>
+
+  <audio id="click-sound" src="click.mp3"></audio>
+  <script>
+    let dark = false;
+    let soundOn = true;
+
+    function toggleNightMode() {
+      dark = !dark;
+      document.body.classList.toggle("dark-mode", dark);
+    }
+
+    function toggleSound() {
+      soundOn = !soundOn;
+      alert(soundOn ? "🔊 الصوت مفعّل" : "🔇 الصوت موقوف");
+    }
+
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (soundOn) document.getElementById("click-sound").play();
+      });
+    });
+  </script>
 </body>
 </html>
